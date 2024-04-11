@@ -56,13 +56,7 @@ end
 
 -- switch the gamepad enabled state twice, because some UI elements grab the state before we can properly do an update
 function ADCUI:cycleGamepadPreferredMode()
-  --[[ if ADCUI:originalIsInGamepadPreferredMode() then
-    SetSetting(SETTING_TYPE_GAMEPAD, GAMEPAD_SETTING_GAMEPAD_PREFERRED, "false")
-    SetSetting(SETTING_TYPE_GAMEPAD, GAMEPAD_SETTING_GAMEPAD_PREFERRED, "true")
-  else
-    SetSetting(SETTING_TYPE_GAMEPAD, GAMEPAD_SETTING_GAMEPAD_PREFERRED, "true")
-    SetSetting(SETTING_TYPE_GAMEPAD, GAMEPAD_SETTING_GAMEPAD_PREFERRED, "false")
-  end ]]
+  ADCUI.vars.isGamepadPreferredAutomatic = false
   if ADCUI:originalIsInGamepadPreferredMode() then
     SetSetting(SETTING_TYPE_GAMEPAD, GAMEPAD_SETTING_INPUT_PREFERRED_MODE, INPUT_PREFERRED_MODE_ALWAYS_KEYBOARD)
     SetSetting(SETTING_TYPE_GAMEPAD, GAMEPAD_SETTING_INPUT_PREFERRED_MODE, INPUT_PREFERRED_MODE_ALWAYS_GAMEPAD)
@@ -85,6 +79,11 @@ end
 -- return whether gamepad action bar should be used
 function ADCUI:shouldUseGamepadActionBar()
   return getSettingHelper("useGamepadActionBar") and not ADCUI:shouldUseGamepadUI() and ADCUI:originalIsInGamepadPreferredMode()
+end
+
+-- return whether usePreferredModeAuto should be used
+function ADCUI:usePreferredModeAuto()
+  return getSettingHelper("usePreferredModeAuto")
 end
 
 -- set the reticle fonts

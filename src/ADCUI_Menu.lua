@@ -1,7 +1,7 @@
 ﻿-- Advanced Disable Controller UI Menu
 -- Author: Lionas
 local PanelTitle = "Advanced Disable Controller UI"
-local Author = "Lionas, Setsu"
+local Author = "Lionas, Setsu, |cCC99FFnotnear|r"
 
 local LAM2 = LibAddonMenu2
 
@@ -98,6 +98,28 @@ function ADCUI.LoadLAM2Panel()
           local settings = ADCUI:getSettings()
           settings.useGamepadActionBar = value
           ADCUI:setGamepadActionBarOverrideState(value)
+          ADCUI:cycleGamepadPreferredMode()
+        end,
+    },
+    { -- Use Preferred Mode Automatic
+      type = "checkbox",
+      name = GetString(ADCUI_USE_PREFERRED_MODE_AUTO),
+      tooltip = GetString(ADCUI_USE_PREFERRED_MODE_AUTO_TOOLTIP),
+      default = false,
+      disabled =
+        function(value)
+          local settings = ADCUI:getSettings()
+          return settings.useControllerUI
+        end,
+      getFunc =
+        function(value)
+          local settings = ADCUI:getSettings()
+          return settings.usePreferredModeAuto
+        end,
+      setFunc =
+        function(value)
+          local settings = ADCUI:getSettings()
+          settings.usePreferredModeAuto = value
           ADCUI:cycleGamepadPreferredMode()
         end,
     },

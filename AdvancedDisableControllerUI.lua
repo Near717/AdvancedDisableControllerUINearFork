@@ -68,6 +68,11 @@ function ADCUI.onGamepadModeChanged(eventCode, gamepadPreferred)
       return
     end
 
+    if ADCUI:usePreferredModeAuto() and not ADCUI.vars.isGamepadPreferredAutomatic then
+      SetSetting(SETTING_TYPE_GAMEPAD, GAMEPAD_SETTING_INPUT_PREFERRED_MODE, INPUT_PREFERRED_MODE_AUTOMATIC)
+      ADCUI.vars.isGamepadPreferredAutomatic = true
+    end
+
     if ADCUI:shouldUseGamepadButtons() then
       ADCUI:setGamepadIcons()
       ADCUI:setGamepadUISettings()
@@ -78,7 +83,7 @@ function ADCUI.onGamepadModeChanged(eventCode, gamepadPreferred)
     ADCUI:setReticleFont(settings.fonts.reticle, settings.fonts.reticleContext)
     ADCUI:setStealthIconFont(settings.fonts.stealthIcon)
 
-    ZO_Alert(UI_ALERT_CATEGORY_ALERT, SOUNDS.DEFAULT_CLICK, "Gamepad UI override enabled")
+    ZO_Alert(UI_ALERT_CATEGORY_ALERT, SOUNDS.NONE, "Gamepad UI override enabled")
   else
     ADCUI:setKeyboardUISettings()
   end

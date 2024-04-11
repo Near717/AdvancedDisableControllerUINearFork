@@ -5,6 +5,13 @@ ADCUI = {}
 
 ADCUI.default = {
   -- default values
+  useAccountWideSettings = false,
+  useControllerUI = false,
+  useGamepadButtons = true,
+  useGamepadActionBar = false,
+  usePreferredModeAuto = false,
+
+  -- compass
   scale = 1,
   width = 550,
   height = 30,
@@ -13,10 +20,6 @@ ADCUI.default = {
   anchorOffsetX = 0,
   anchorOffsetY = 40,
   pinLabelScale = 1,
-  useAccountWideSettings = false,
-  useControllerUI = false,
-  useGamepadButtons = true,
-  useGamepadActionBar = true,
 
   -- fonts
   fonts = {
@@ -126,6 +129,7 @@ ADCUI.const = {
 ADCUI.vars = {
   isLockpicking = false,
   isGamepadKeysInitialized = false,
+  isGamepadPreferredAutomatic = false,
   isGamepadActionBarOverrideInitialized = false,
   shouldBlockOverrideRequests = false,  -- internal signaling for temporary use
   backupActionButtonIcons = {},  -- used by gamepad action bar override

@@ -2,7 +2,7 @@
 ## APIVersion: 101041
 ## AddOnVersion: 160
 ## Version: 1.6.0
-## Author: Lionas, Setsu
+## Author: Lionas, Setsu, |cCC99FFnotnear|r
 ## Description: Disable controller-UI and adjust compass
 ## DependsOn: LibAddonMenu-2.0>=30
 ## OptionalDependsOn: LibDebugLogger
@@ -23,8 +23,8 @@ src/ADCUI_SettingsOverrides.lua
 src/ADCUI_EventHandlers.lua
 src/ADCUI_MainKeystrip.lua
 src/ADCUI_Menu.lua
-src/ADCUI_Debug.xml
-src/ADCUI_Debug.lua
+# src/ADCUI_Debug.xml
+# src/ADCUI_Debug.lua
 
 AdvancedDisableControllerUI.lua
 Bindings.xml

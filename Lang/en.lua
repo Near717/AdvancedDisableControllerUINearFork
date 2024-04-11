@@ -31,6 +31,10 @@ ZO_CreateStringId("ADCUI_USE_GAMEPAD_BUTTONS_TOOLTIP", "Replaces keyboard icons 
 ZO_CreateStringId("ADCUI_USE_GAMEPAD_ACTION_BAR", "Use Gamepad Action Bar")
 ZO_CreateStringId("ADCUI_USE_GAMEPAD_ACTION_BAR_TOOLTIP", "Uses gamepad skill and resource bars")
 
+-- Use preferred mode automatic
+ZO_CreateStringId("ADCUI_USE_PREFERRED_MODE_AUTO", "Use Preferred Mode Automatic")
+ZO_CreateStringId("ADCUI_USE_PREFERRED_MODE_AUTO_TOOLTIP", "Switches preferred mode to automatic")
+
 -- Compass header
 ZO_CreateStringId("ADCUI_COMPASS_HEADER", "Compass")
 

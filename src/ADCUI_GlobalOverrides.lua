@@ -41,7 +41,6 @@ QUICKSLOT_RADIAL_MANAGER["StartInteraction"] = myQuickslotSlotRadialManager_Star
 
 --[[ function ZO_InteractiveWheel_Manager:GetPreferredWheel(interactiveWheelType)
   if interactiveWheelType == ZO_INTERACTIVE_WHEEL_TYPE_UTILITY then
-      self.gamepad = ADCUI:shouldUseGamepadUI()
       return self.gamepad and UTILITY_WHEEL_GAMEPAD or UTILITY_WHEEL_KEYBOARD
   elseif interactiveWheelType == ZO_INTERACTIVE_WHEEL_TYPE_FISHING then
       return self.gamepad and FISHING_GAMEPAD or FISHING_KEYBOARD
@@ -52,9 +51,9 @@ QUICKSLOT_RADIAL_MANAGER["StartInteraction"] = myQuickslotSlotRadialManager_Star
   end
 end ]]
 
-local function myZO_InteractiveWheel_Manager_StartInteraction(self, interactiveWheelType)
+--[[ function ZO_InteractiveWheel_Manager:StartInteraction(interactiveWheelType)
   --Order matters, set this first
-  self.gamepad = ADCUI:shouldUseGamepadUI() == false
+  self.gamepad = ADCUI:shouldUseGamepadUI() == false and ADCUI:shouldUseGamepadButtons() or ADCUI:shouldUseGamepadUI()
 
   local wheel = self:GetPreferredWheel(interactiveWheelType)
   local interactionStarted = wheel:StartInteraction()
@@ -68,8 +67,7 @@ local function myZO_InteractiveWheel_Manager_StartInteraction(self, interactiveW
   end
 
   return interactionStarted
-end
-ZO_InteractiveWheel_Manager["StartInteraction"] = myZO_InteractiveWheel_Manager_StartInteraction
+end ]]
 
 
 -- [Stall All Button Mapping]

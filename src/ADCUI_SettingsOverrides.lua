@@ -18,7 +18,7 @@ function ADCUI:getGamepadIcons()
   end
 
   -- quickslot button text
-  local button = ZO_ActionBar_GetButton(8)
+  local button = ZO_ActionBar_GetButton(1, HOTBAR_CATEGORY_QUICKSLOT_WHEEL)
   ADCUI.vars.backupActionButtonIcons[button.buttonText] = button.buttonText:GetText()
 
   -- action button texts
