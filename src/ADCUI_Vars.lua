@@ -12,14 +12,14 @@ ADCUI.default = {
   usePreferredModeAuto = false,
 
   -- compass
-  scale = 1,
+  --[[ scale = 1,
   width = 550,
   height = 30,
   point = TOP,
   lockEnabled = false,
   anchorOffsetX = 0,
   anchorOffsetY = 40,
-  pinLabelScale = 1,
+  pinLabelScale = 1, ]]
 
   -- fonts
   fonts = {
@@ -30,7 +30,7 @@ ADCUI.default = {
 }
 
 ADCUI.const = {
-  UPDATE_INTERVAL_MSEC = 5000,
+  --[[ UPDATE_INTERVAL_MSEC = 5000, ]]
   ADDON_NAME = "AdvancedDisableControllerUI",
   CONTROLS_TO_BACKUP = {
     ZO_AddOnsMultiButtonKeyLabel,

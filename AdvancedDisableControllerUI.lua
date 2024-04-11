@@ -96,7 +96,7 @@ local function onLoad(event, addon)
   end
 
   initializePrefs()
-  ADCUI.onUpdateCompass()
+  --[[ ADCUI.onUpdateCompass()
 
   if ADCUI:originalIsInGamepadPreferredMode() then
     -- we loaded in gamepad mode but with our override enabled, so many controls initialized in an inconsistent state
@@ -107,13 +107,13 @@ local function onLoad(event, addon)
     end
   end
 
-  ZO_CompassFrame:SetHandler("OnUpdate", frameUpdate)
+  ZO_CompassFrame:SetHandler("OnUpdate", frameUpdate) ]]
 
   EVENT_MANAGER:RegisterForEvent("AdvancedDisableControllerUI_Player", EVENT_PLAYER_ACTIVATED, loadMenuPanel)
   EVENT_MANAGER:UnregisterForEvent("AdvancedDisableControllerUI_OnLoad", EVENT_ADD_ON_LOADED)
 end
 
--- Update variables
+--[[ -- Update variables
 local function onUpdateVars()
 
   local anchor, point, rTo, rPoint, offsetx, offsety = ZO_CompassFrame:GetAnchor()
@@ -131,12 +131,12 @@ local function onUpdateVars()
       settings.point = rPoint
     end
   end
-end
+end ]]
 
 
 -- [Register Event Handlers]
 
 EVENT_MANAGER:RegisterForEvent(ADCUI.const.ADDON_NAME, EVENT_ADD_ON_LOADED, onLoad)
-EVENT_MANAGER:RegisterForEvent(ADCUI.const.ADDON_NAME, EVENT_GLOBAL_MOUSE_UP, onUpdateVars)
-EVENT_MANAGER:RegisterForEvent(ADCUI.const.ADDON_NAME, EVENT_GLOBAL_MOUSE_DOWN, onUpdateVars)
+--[[ EVENT_MANAGER:RegisterForEvent(ADCUI.const.ADDON_NAME, EVENT_GLOBAL_MOUSE_UP, onUpdateVars)
+EVENT_MANAGER:RegisterForEvent(ADCUI.const.ADDON_NAME, EVENT_GLOBAL_MOUSE_DOWN, onUpdateVars) ]]
 EVENT_MANAGER:RegisterForEvent(ADCUI.const.ADDON_NAME, EVENT_GAMEPAD_PREFERRED_MODE_CHANGED, ADCUI.onGamepadModeChanged)

@@ -54,6 +54,7 @@ end ]]
 --[[ function ZO_InteractiveWheel_Manager:StartInteraction(interactiveWheelType)
   --Order matters, set this first
   self.gamepad = ADCUI:shouldUseGamepadUI() == false and ADCUI:shouldUseGamepadButtons() or ADCUI:shouldUseGamepadUI()
+  d("test?")
 
   local wheel = self:GetPreferredWheel(interactiveWheelType)
   local interactionStarted = wheel:StartInteraction()
@@ -70,7 +71,7 @@ end ]]
 end ]]
 
 
--- [Stall All Button Mapping]
+--[[ -- [Stall All Button Mapping]
 
 -- hook button group add to adjust controls for the store scene
 -- we have to do this for store and inventory scenes because their classes don't expose the descriptor structures globally
@@ -107,7 +108,7 @@ local function onAddOrUpdateKeybindButtonGroup(self, keybindButtonGroupDescripto
 end
 
 ZO_PreHook(KEYBIND_STRIP, "AddKeybindButtonGroup", onAddOrUpdateKeybindButtonGroup)
-ZO_PreHook(KEYBIND_STRIP, "UpdateKeybindButtonGroup", onAddOrUpdateKeybindButtonGroup)
+ZO_PreHook(KEYBIND_STRIP, "UpdateKeybindButtonGroup", onAddOrUpdateKeybindButtonGroup) ]]
 
 
 -- [World Map]
@@ -128,7 +129,7 @@ WORLD_MAP_SCENE:RegisterCallback("StateChange", function(oldState, newState)
   map:AddTargetOffsetDelta(0, 0)
 end)
 
--- [Player Attribute Bars]
+--[[ -- [Player Attribute Bars]
 
 local originalZO_PlayerAttributeBars_OnGamepadPreferredModeChanged = PLAYER_ATTRIBUTE_BARS["OnGamepadPreferredModeChanged"]
 local function myZO_PlayerAttributeBars_OnGamepadPreferredModeChanged(self)
@@ -139,7 +140,7 @@ local function myZO_PlayerAttributeBars_OnGamepadPreferredModeChanged(self)
   ADCUI:setGamepadPreferredModeOverrideState(false)
   originalZO_PlayerAttributeBars_OnGamepadPreferredModeChanged(self)
   ADCUI:setGamepadPreferredModeOverrideState(true)
-end
+end ]]
 
 
 -- [Action Bar]
@@ -488,7 +489,7 @@ local registeredOnce = false
 
 function ADCUI:setGamepadActionBarOverrideState(state)
   if state then
-    PLAYER_ATTRIBUTE_BARS["OnGamepadPreferredModeChanged"] = myZO_PlayerAttributeBars_OnGamepadPreferredModeChanged
+    --[[ PLAYER_ATTRIBUTE_BARS["OnGamepadPreferredModeChanged"] = myZO_PlayerAttributeBars_OnGamepadPreferredModeChanged ]]
     ZO_PlatformStyle["Apply"] = myZO_PlatformStyle_Apply
     _G["ZO_GetPlatformTemplate"] = myZO_GetPlatformTemplate
     _G["ZO_ActionSlot_SetupSlot"] = myZO_ActionSlot_SetupSlot
@@ -509,7 +510,7 @@ function ADCUI:setGamepadActionBarOverrideState(state)
       registeredOnce = true
     end
   else
-    PLAYER_ATTRIBUTE_BARS["OnGamepadPreferredModeChanged"] = originalZO_PlayerAttributeBars_OnGamepadPreferredModeChanged
+    --[[ PLAYER_ATTRIBUTE_BARS["OnGamepadPreferredModeChanged"] = originalZO_PlayerAttributeBars_OnGamepadPreferredModeChanged ]]
     ZO_PlatformStyle["Apply"] = originalZO_PlatformStyle_Apply
     _G["ZO_GetPlatformTemplate"] = originalZO_GetPlatformTemplate
     _G["ZO_ActionSlot_SetupSlot"] = originalZO_ActionSlot_SetupSlot

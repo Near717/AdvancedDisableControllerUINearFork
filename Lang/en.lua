@@ -3,7 +3,7 @@
 -- English specific file
 
 -- keybinds
-ZO_CreateStringId("SI_BINDING_NAME_ADCUI_DEBUG", "ReloadUI")
+--[[ ZO_CreateStringId("SI_BINDING_NAME_ADCUI_DEBUG", "ReloadUI") ]]
 ZO_CreateStringId("SI_BINDING_NAME_ADCUI_ACTIVATE", "Show Settings")
 ZO_CreateStringId("SI_BINDING_NAME_USE_CONTROLLER_UI", "Use Default UI In Gamepad Mode")
 ZO_CreateStringId("SI_BINDING_NAME_USE_GAMEPAD_BUTTONS", "Use Gamepad Button Icons")
@@ -35,7 +35,7 @@ ZO_CreateStringId("ADCUI_USE_GAMEPAD_ACTION_BAR_TOOLTIP", "Uses gamepad skill an
 ZO_CreateStringId("ADCUI_USE_PREFERRED_MODE_AUTO", "Use Preferred Mode Automatic")
 ZO_CreateStringId("ADCUI_USE_PREFERRED_MODE_AUTO_TOOLTIP", "Switches preferred mode to automatic")
 
--- Compass header
+--[[ -- Compass header
 ZO_CreateStringId("ADCUI_COMPASS_HEADER", "Compass")
 
 -- lock compass
@@ -56,7 +56,7 @@ ZO_CreateStringId("ADCUI_HEIGHT_TOOLTIP", "Height of compass")
 
 -- center pin text scale
 ZO_CreateStringId("ADCUI_LABEL_SCALE_TITLE", "Label Scale")
-ZO_CreateStringId("ADCUI_LABEL_SCALE_TOOLTIP", "Center pin text scale of compass")
+ZO_CreateStringId("ADCUI_LABEL_SCALE_TOOLTIP", "Center pin text scale of compass") ]]
 
 -- Fonts header
 ZO_CreateStringId("ADCUI_FONTS_HEADER", "Fonts")

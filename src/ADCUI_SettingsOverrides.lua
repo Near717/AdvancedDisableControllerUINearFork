@@ -42,7 +42,7 @@ local isReticleAdjusted = false
 
 -- configure UI elements for gamepad
 function ADCUI:setGamepadUISettings()
-  LORE_READER.PCKeybindStripDescriptor = LORE_READER.gamepadKeybindStripDescriptor          -- enables gamepad controls when reading books
+  --[[ LORE_READER.PCKeybindStripDescriptor = LORE_READER.gamepadKeybindStripDescriptor          -- enables gamepad controls when reading books
   KEYBIND_STRIP_STANDARD_STYLE.alwaysPreferGamepadMode = true                               -- change default button style to the gamepad version
   QUEST_JOURNAL_KEYBOARD.keybindStripDescriptor[2].keybind = "UI_SHORTCUT_SECONDARY"        -- switch show quest location to X
   table.insert(QUEST_JOURNAL_KEYBOARD.keybindStripDescriptor, {                             -- build an extra keybind for the original keyboard keybind so that they both work
@@ -58,7 +58,7 @@ function ADCUI:setGamepadUISettings()
   PLAYER_INVENTORY.bankDepositTabKeybindButtonGroup[2].keybind = "UI_SHORTCUT_LEFT_STICK"
   PLAYER_INVENTORY.houseBankWithdrawTabKeybindButtonGroup[1].keybind = "UI_SHORTCUT_LEFT_STICK"
   PLAYER_INVENTORY.houseBankDepositTabKeybindButtonGroup[1].keybind = "UI_SHORTCUT_LEFT_STICK"
-  LOCK_PICK.keybindStripDescriptor[4].alignment = KEYBIND_STRIP_ALIGN_RIGHT
+  LOCK_PICK.keybindStripDescriptor[4].alignment = KEYBIND_STRIP_ALIGN_RIGHT ]]
 
   -- adjust horizontal positioning of reticle labels since they're too far off to the right
   if not isReticleAdjusted then
@@ -72,11 +72,11 @@ function ADCUI:setGamepadUISettings()
   end
 end
 
-local backupLoreReaderKeyboardKeybind = LORE_READER.PCKeybindStripDescriptor
+--[[ local backupLoreReaderKeyboardKeybind = LORE_READER.PCKeybindStripDescriptor ]]
 
 -- restore UI elements for keyboard
 function ADCUI:setKeyboardUISettings()
-  LORE_READER.PCKeybindStripDescriptor = backupLoreReaderKeyboardKeybind
+  --[[ LORE_READER.PCKeybindStripDescriptor = backupLoreReaderKeyboardKeybind
   KEYBIND_STRIP_STANDARD_STYLE.alwaysPreferGamepadMode = false
   QUEST_JOURNAL_KEYBOARD.keybindStripDescriptor[2].keybind = "UI_SHORTCUT_SHOW_QUEST_ON_MAP"
   if (QUEST_JOURNAL_KEYBOARD.keybindStripDescriptor[#QUEST_JOURNAL_KEYBOARD.keybindStripDescriptor].isAddedByADCUI) then
@@ -87,7 +87,7 @@ function ADCUI:setKeyboardUISettings()
   PLAYER_INVENTORY.bankWithdrawTabKeybindButtonGroup[3].keybind = "UI_SHORTCUT_STACK_ALL"
   PLAYER_INVENTORY.bankDepositTabKeybindButtonGroup[2].keybind = "UI_SHORTCUT_STACK_ALL"
   PLAYER_INVENTORY.houseBankWithdrawTabKeybindButtonGroup[1].keybind = "UI_SHORTCUT_STACK_ALL"
-  PLAYER_INVENTORY.houseBankDepositTabKeybindButtonGroup[1].keybind = "UI_SHORTCUT_STACK_ALL"
+  PLAYER_INVENTORY.houseBankDepositTabKeybindButtonGroup[1].keybind = "UI_SHORTCUT_STACK_ALL" ]]
 
   if isReticleAdjusted then
     local _, point, relTo, relPoint, offsetX, offsetY = ZO_ReticleContainerInteractKeybindButtonKeyLabel:GetAnchor()

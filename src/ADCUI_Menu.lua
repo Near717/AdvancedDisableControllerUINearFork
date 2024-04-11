@@ -123,7 +123,7 @@ function ADCUI.LoadLAM2Panel()
           ADCUI:cycleGamepadPreferredMode()
         end,
     },
-    { -- [Compass]
+    --[[ { -- [Compass]
 			type = "header",
 			name = GetString(ADCUI_COMPASS_HEADER),
 		},
@@ -222,7 +222,7 @@ function ADCUI.LoadLAM2Panel()
           settings.pinLabelScale = tonumber(value) / 10.0
           ADCUI:frameUpdate()
         end,
-    },
+    }, ]]
     { -- [Fonts]
 			type = "header",
 			name = GetString(ADCUI_FONTS_HEADER),

@@ -30,7 +30,7 @@ ZO_CreateStringId("ADCUI_USE_GAMEPAD_BUTTONS_TOOLTIP", "Ersetzt Tastatursymbole 
 ZO_CreateStringId("ADCUI_USE_GAMEPAD_ACTION_BAR", "Verwenden Gamepad-Aktionsleiste")
 ZO_CreateStringId("ADCUI_USE_GAMEPAD_ACTION_BAR_TOOLTIP", "Verwendet Gamepad-Fähigkeiten und Ressourcenleisten")
 
--- Compass header
+--[[ -- Compass header
 ZO_CreateStringId("ADCUI_COMPASS_HEADER", "Kompass")
 
 -- lock compass
@@ -51,7 +51,7 @@ ZO_CreateStringId("ADCUI_HEIGHT_TOOLTIP", "Kompass Höhe")
 
 -- center pin text scale
 ZO_CreateStringId("ADCUI_LABEL_SCALE_TITLE", "Beschriftung")
-ZO_CreateStringId("ADCUI_LABEL_SCALE_TOOLTIP", "Skalierung der Kompassbeschriftung")
+ZO_CreateStringId("ADCUI_LABEL_SCALE_TOOLTIP", "Skalierung der Kompassbeschriftung") ]]
 
 -- Fonts header
 ZO_CreateStringId("ADCUI_FONTS_HEADER", "Schriften")
