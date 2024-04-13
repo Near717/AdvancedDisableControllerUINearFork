@@ -1,7 +1,7 @@
 ﻿## Title: Advanced Disable Controller UI Near's Branch
 ## APIVersion: 101041
-## AddOnVersion: 200
-## Version: 2.0.0
+## AddOnVersion: 201
+## Version: 2.0.1
 ## Author: Lionas, Setsu, |cCC99FFnotnear|r
 ## Description: Disable controller-UI and adjust compass
 ## DependsOn: LibAddonMenu-2.0>=30

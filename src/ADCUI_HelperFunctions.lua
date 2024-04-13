@@ -56,7 +56,6 @@ end
 
 -- switch the gamepad enabled state twice, because some UI elements grab the state before we can properly do an update
 function ADCUI:cycleGamepadPreferredMode()
-  ADCUI.vars.isGamepadPreferredAutomatic = false
   if ADCUI:originalIsInGamepadPreferredMode() then
     SetSetting(SETTING_TYPE_GAMEPAD, GAMEPAD_SETTING_INPUT_PREFERRED_MODE, INPUT_PREFERRED_MODE_ALWAYS_KEYBOARD)
     SetSetting(SETTING_TYPE_GAMEPAD, GAMEPAD_SETTING_INPUT_PREFERRED_MODE, INPUT_PREFERRED_MODE_ALWAYS_GAMEPAD)

@@ -43,6 +43,15 @@ local function initializeGamepadIcons(eventCode, gamepadPreferred)
   end
 end
 
+local function isGamepadPreferredAutomatic()
+  local var = GetSetting(SETTING_TYPE_GAMEPAD, GAMEPAD_SETTING_INPUT_PREFERRED_MODE)
+  if var == INPUT_PREFERRED_MODE_AUTOMATIC then
+    return true
+  else
+    return false
+  end
+end
+
 -- handle the gamepad mode change event
 -- we use this to handle overrides and cleanup
 -- has to be global
@@ -68,11 +77,6 @@ function ADCUI.onGamepadModeChanged(eventCode, gamepadPreferred)
       return
     end
 
-    if ADCUI:usePreferredModeAuto() and not ADCUI.vars.isGamepadPreferredAutomatic then
-      SetSetting(SETTING_TYPE_GAMEPAD, GAMEPAD_SETTING_INPUT_PREFERRED_MODE, INPUT_PREFERRED_MODE_AUTOMATIC)
-      ADCUI.vars.isGamepadPreferredAutomatic = true
-    end
-
     if ADCUI:shouldUseGamepadButtons() then
       ADCUI:setGamepadIcons()
       ADCUI:setGamepadUISettings()
@@ -82,6 +86,10 @@ function ADCUI.onGamepadModeChanged(eventCode, gamepadPreferred)
     local settings = ADCUI:getSettings()
     ADCUI:setReticleFont(settings.fonts.reticle, settings.fonts.reticleContext)
     ADCUI:setStealthIconFont(settings.fonts.stealthIcon)
+
+    if ADCUI:usePreferredModeAuto() and not isGamepadPreferredAutomatic() then
+      SetSetting(SETTING_TYPE_GAMEPAD, GAMEPAD_SETTING_INPUT_PREFERRED_MODE, INPUT_PREFERRED_MODE_AUTOMATIC)
+    end
 
     ZO_Alert(UI_ALERT_CATEGORY_ALERT, SOUNDS.NONE, "Gamepad UI override enabled")
   else
