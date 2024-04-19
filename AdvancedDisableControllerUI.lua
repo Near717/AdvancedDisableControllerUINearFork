@@ -104,7 +104,7 @@ local function onLoad(event, addon)
   end
 
   initializePrefs()
-  --[[ ADCUI.onUpdateCompass()
+  --[[ ADCUI.onUpdateCompass() ]]
 
   if ADCUI:originalIsInGamepadPreferredMode() then
     -- we loaded in gamepad mode but with our override enabled, so many controls initialized in an inconsistent state
@@ -115,7 +115,7 @@ local function onLoad(event, addon)
     end
   end
 
-  ZO_CompassFrame:SetHandler("OnUpdate", frameUpdate) ]]
+  --[[ ZO_CompassFrame:SetHandler("OnUpdate", frameUpdate) ]]
 
   EVENT_MANAGER:RegisterForEvent("AdvancedDisableControllerUI_Player", EVENT_PLAYER_ACTIVATED, loadMenuPanel)
   EVENT_MANAGER:UnregisterForEvent("AdvancedDisableControllerUI_OnLoad", EVENT_ADD_ON_LOADED)
