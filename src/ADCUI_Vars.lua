@@ -9,7 +9,7 @@ ADCUI.default = {
   useControllerUI = false,
   useGamepadButtons = true,
   useGamepadActionBar = false,
-  usePreferredModeAuto = false,
+  usePreferredModeAuto = true,
 
   -- compass
   --[[ scale = 1,
