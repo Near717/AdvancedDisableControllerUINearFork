@@ -81,7 +81,7 @@ function ADCUI:shouldUseGamepadActionBar()
 end
 
 -- return whether usePreferredModeAuto should be used
-function ADCUI:usePreferredModeAuto()
+function ADCUI:shouldUsePreferredModeAuto()
   return getSettingHelper("usePreferredModeAuto")
 end
 

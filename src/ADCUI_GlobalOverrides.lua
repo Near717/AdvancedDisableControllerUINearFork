@@ -161,7 +161,7 @@ end
 -- override ZO_GetPlatformTemplate but only for calls from ActionButton
 local originalZO_GetPlatformTemplate = _G["ZO_GetPlatformTemplate"]
 local function myZO_GetPlatformTemplate(baseTemplate)
-  if not ADCUI:originalIsInGamepadPreferredMode() or 
+  if not ADCUI:originalIsInGamepadPreferredMode() or
      (baseTemplate ~= "ZO_ActionButton") and (baseTemplate ~= "ZO_UltimateActionButton") then
     return originalZO_GetPlatformTemplate(baseTemplate)
   else
@@ -368,7 +368,7 @@ local function myActionButton_ApplyStyle(self, template)
 
   local cooldownHeight = 1
 
-  if self.showingCooldown then 
+  if self.showingCooldown then
     self.cooldown:SetHidden(true)
 
     local remain = GetSlotCooldownInfo(slotnum)

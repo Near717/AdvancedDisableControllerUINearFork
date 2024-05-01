@@ -1,14 +1,10 @@
 ﻿-- Advanced Disable Controller UI
--- Author: Lionas, Setsu
-
--- CHANGELOG:
---    preliminary implementation for gamepad action bar override
---    added keybinds for gamepad buttons and action bar
+-- Author: Lionas, Setsu, notnear
 
 -- TODO:
 --    world map zooming...etc [worldmap.lua]
 
--- BUGS:
+-- BUG:
 --    sprint is now a toggle
 
 
@@ -87,7 +83,7 @@ function ADCUI.onGamepadModeChanged(eventCode, gamepadPreferred)
     ADCUI:setReticleFont(settings.fonts.reticle, settings.fonts.reticleContext)
     ADCUI:setStealthIconFont(settings.fonts.stealthIcon)
 
-    if ADCUI:usePreferredModeAuto() and not isGamepadPreferredAutomatic() then
+    if ADCUI:shouldUsePreferredModeAuto() and not isGamepadPreferredAutomatic() then
       SetSetting(SETTING_TYPE_GAMEPAD, GAMEPAD_SETTING_INPUT_PREFERRED_MODE, INPUT_PREFERRED_MODE_AUTOMATIC)
     end
 
