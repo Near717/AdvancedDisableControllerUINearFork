@@ -18,7 +18,7 @@ src/ADCUI_Vars.lua
 
 src/ADCUI_HelperFunctions.lua
 src/ADCUI_GlobalOverrides.lua
-# src/ADCUI_Compass.lua
+src/ADCUI_Compass.lua
 src/ADCUI_SettingsOverrides.lua
 src/ADCUI_EventHandlers.lua
 # src/ADCUI_MainKeystrip.lua

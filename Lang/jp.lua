@@ -30,7 +30,7 @@ ZO_CreateStringId("ADCUI_USE_GAMEPAD_BUTTONS_TOOLTIP", "キーボードアイコ
 ZO_CreateStringId("ADCUI_USE_GAMEPAD_ACTION_BAR", "コントローラアクションバーを使う")
 ZO_CreateStringId("ADCUI_USE_GAMEPAD_ACTION_BAR_TOOLTIP", "コントローラのスキルとリソースバーを使う")
 
---[[ -- Compass header
+-- Compass header
 ZO_CreateStringId("ADCUI_COMPASS_HEADER", "コンパス")
 
 -- lock compass
@@ -51,7 +51,7 @@ ZO_CreateStringId("ADCUI_HEIGHT_TOOLTIP", "コンパスの高さを設定しま�
 
 -- center pin text scale
 ZO_CreateStringId("ADCUI_LABEL_SCALE_TITLE", "ラベルの拡大率")
-ZO_CreateStringId("ADCUI_LABEL_SCALE_TOOLTIP", "ピンの上に表示される文字の拡大率を設定します") ]]
+ZO_CreateStringId("ADCUI_LABEL_SCALE_TOOLTIP", "ピンの上に表示される文字の拡大率を設定します")
 
 -- Fonts header
 ZO_CreateStringId("ADCUI_FONTS_HEADER", "フォント")
