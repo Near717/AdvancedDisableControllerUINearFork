@@ -229,7 +229,7 @@ local function myActionButton_UpdateUsable(self)
   end
 end
 
-local originalActionButton_SetCooldownIconAnchors = ActionButton["SetCooldownIconAnchors"]
+--[[ local originalActionButton_SetCooldownIconAnchors = ActionButton["SetCooldownIconAnchors"]
 local function myActionButton_SetCooldownIconAnchors(self, inCooldown)
   if not ADCUI:originalIsInGamepadPreferredMode() then
     return originalActionButton_SetCooldownIconAnchors(self, inCooldown)
@@ -244,7 +244,7 @@ local function myActionButton_SetCooldownIconAnchors(self, inCooldown)
   else
     self.icon:SetAnchor(CENTER, self.flipCard)
   end
-end
+end ]]
 
 -- runs continuously during cooldown such as after using a collectible item
 local originalActionButton_RefreshCooldown = ActionButton["RefreshCooldown"]
@@ -495,7 +495,7 @@ function ADCUI:setGamepadActionBarOverrideState(state)
     _G["ZO_ActionSlot_SetupSlot"] = myZO_ActionSlot_SetupSlot
     ActionButton["Clear"] = myActionButton_Clear
     ActionButton["UpdateUsable"] = myActionButton_UpdateUsable
-    ActionButton["SetCooldownIconAnchors"] = myActionButton_SetCooldownIconAnchors
+    -- ActionButton["SetCooldownIconAnchors"] = myActionButton_SetCooldownIconAnchors --check later
     ActionButton["RefreshCooldown"] = myActionButton_RefreshCooldown
     ActionButton["UpdateCooldown"] = myActionButton_UpdateCooldown
     ActionButton["ApplyStyle"] = myActionButton_ApplyStyle
@@ -516,7 +516,7 @@ function ADCUI:setGamepadActionBarOverrideState(state)
     _G["ZO_ActionSlot_SetupSlot"] = originalZO_ActionSlot_SetupSlot
     ActionButton["Clear"] = originalActionButton_Clear
     ActionButton["UpdateUsable"] = originalActionButton_UpdateUsable
-    ActionButton["SetCooldownIconAnchors"] = originalActionButton_SetCooldownIconAnchors
+    -- ActionButton["SetCooldownIconAnchors"] = originalActionButton_SetCooldownIconAnchors
     ActionButton["RefreshCooldown"] = originalActionButton_RefreshCooldown
     ActionButton["UpdateCooldown"] = originalActionButton_UpdateCooldown
     ActionButton["ApplyStyle"] = originalActionButton_ApplyStyle
