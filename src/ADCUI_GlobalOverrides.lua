@@ -11,7 +11,7 @@ if not ADCUI.isDefined then return end
 -- this seems to keep the keyboard dialog and just switch out the buttons to the gamepad ones
 local originalZOShowDialog = _G["ZO_Dialogs_ShowDialog"]
 local function myShowDialog(name, data, textParams, isGamepad)
-  if not ADCUI:shouldUseGamepadButtons() then
+  if not ADCUI:shouldUseGamepadButtons() or name == SCRIBING_OPEN_SKILLS_CONFIRM then
     return originalZOShowDialog(name, data, textParams, isGamepad)
   end
 
