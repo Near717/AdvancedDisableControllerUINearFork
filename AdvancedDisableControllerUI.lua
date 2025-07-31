@@ -93,13 +93,22 @@ function ADCUI.onGamepadModeChanged(eventCode, gamepadPreferred)
   end
 end
 
--- OnLoad
-local function onLoad(event, addon)
-  if (addon ~= ADCUI.const.ADDON_NAME) then
-    return
+local function registerSlashCommands()
+  SLASH_COMMANDS['/gpui'] = function ()
+    local settings = ADCUI:getSettings()
+    settings.useControllerUI = not settings.useControllerUI
+    ADCUI:cycleGamepadPreferredMode()
+    ZO_Alert(UI_ALERT_CATEGORY_ALERT, SOUNDS.NONE, "Gamepad UI override disabled")
   end
+end
+
+-- OnLoad
+local function onLoad(_, addonName)
+  if addonName ~= ADCUI.const.ADDON_NAME then return end
+  EVENT_MANAGER:UnregisterForEvent("AdvancedDisableControllerUI_OnLoad", EVENT_ADD_ON_LOADED)
 
   initializePrefs()
+  registerSlashCommands()
   ADCUI.onUpdateCompass()
 
   if ADCUI:originalIsInGamepadPreferredMode() then
@@ -114,7 +123,6 @@ local function onLoad(event, addon)
   ZO_CompassFrame:SetHandler("OnUpdate", frameUpdate)
 
   EVENT_MANAGER:RegisterForEvent("AdvancedDisableControllerUI_Player", EVENT_PLAYER_ACTIVATED, loadMenuPanel)
-  EVENT_MANAGER:UnregisterForEvent("AdvancedDisableControllerUI_OnLoad", EVENT_ADD_ON_LOADED)
 end
 
 -- Update variables
